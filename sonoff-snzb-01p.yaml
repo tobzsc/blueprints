@@ -24,7 +24,6 @@ blueprint:
       selector:
         device:
           integration: mqtt
-          manufacturer: eWeLink
           multiple: false
     single_press:
       name: Single Press
