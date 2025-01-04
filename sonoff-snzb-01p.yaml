@@ -22,10 +22,9 @@ blueprint:
       name: Sonoff SNZB-01P Zigbee Wireless Switch
       description: Sonoff SNZB-01P Zigbee Wireless Switch to use
       selector:
-        entity:
+        device:
           integration: mqtt
-          domain:
-            - sensor
+          manufacturer: eWeLink
           multiple: false
     single_press:
       name: Single Press
