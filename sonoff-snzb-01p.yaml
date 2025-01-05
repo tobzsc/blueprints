@@ -23,19 +23,19 @@ blueprint:
           sort: false
           custom_value: false
     single_press:
-      name: Single Press
+      name: On Single Press
       description: Action to run on single press
       default: []
       selector:
         action: {}
     double_press:
-      name: Double Press
+      name: On Double Press
       description: Action to run on double press
       default: []
       selector:
         action: {}
     long_press:
-      name: Long Press
+      name: On Long Press
       description: Action to run on long press (4 seconds)
       default: []
       selector:
@@ -45,6 +45,9 @@ max_exceeded: silent
 trigger:
   - platform: mqtt
     topic: !input mqtt_topic
+condition:
+- condition: template
+  value_template: '{{ trigger.to_state.state in ("single","double","long") }}'
 action:
   - variables:
       command: "{{ trigger.to_state.state }}"
