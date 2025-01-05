@@ -24,19 +24,19 @@ blueprint:
           custom_value: false
     single_press:
       name: On Single Press
-      description: Action to run on single press
+      description: Action to run
       default: []
       selector:
         action: {}
     double_press:
       name: On Double Press
-      description: Action to run on double press
+      description: Action to run
       default: []
       selector:
         action: {}
     long_press:
-      name: On Long Press
-      description: Action to run on long press (4 seconds)
+      name: On Long Press (4 secs)
+      description: Action to run
       default: []
       selector:
         action: {}
