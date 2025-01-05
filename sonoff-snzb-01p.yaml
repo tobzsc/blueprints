@@ -1,5 +1,5 @@
 blueprint:
-  name: Zigbee2MQTT - Sonoff SNZB-01P Zigbee Wireless Switch 
+  name: Z2M - Sonoff SNZB-01P Zigbee Wireless Switch 
   description: Automate your Sonoff SNZB-01P Zigbee Wireless Switch via Zigbee2MQTT. 
   domain: automation
   input:
