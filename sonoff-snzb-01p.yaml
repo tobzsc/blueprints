@@ -3,6 +3,10 @@ blueprint:
   description: Automate your Sonoff SNZB-01P Zigbee Wireless Switch via Zigbee2MQTT. 
   domain: automation
   input:
+    mqtt_topic:
+      name: MQTT Topic
+      description: Topic of the Sonoff SNZB-01P
+      default: zigbee2mqtt/<device name>
     mode:
       name: Automation Modes
       description: https://www.home-assistant.io/docs/automation/modes/
@@ -18,13 +22,6 @@ blueprint:
           multiple: false
           sort: false
           custom_value: false
-    switch:
-      name: Sonoff SNZB-01P Zigbee Wireless Switch
-      description: Sonoff SNZB-01P Zigbee Wireless Switch to use
-      selector:
-        device:
-          integration: mqtt
-          multiple: false
     single_press:
       name: Single Press
       description: Action to run on single press
@@ -46,8 +43,8 @@ blueprint:
 mode: !input mode
 max_exceeded: silent
 trigger:
-  - platform: state
-    entity_id: !input switch
+  - platform: mqtt
+    topic: !input mqtt_topic
 action:
   - variables:
       command: "{{ trigger.to_state.state }}"
